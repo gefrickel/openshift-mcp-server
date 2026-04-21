@@ -40,4 +40,5 @@ LABEL version=0.0.1
 LABEL summary="Red Hat OpenShift MCP Server"
 LABEL konflux.additional-tags="latest"
 
-ENTRYPOINT ["/openshift-mcp-server", "--config", "$CONFIG_PATH"]
+# ENTRYPOINT ["/openshift-mcp-server", "--config", "$CONFIG_PATH"]
+ENTRYPOINT ["/bin/sh", "-c", "exec /openshift-mcp-server --config $CONFIG_PATH"]
